@@ -1,0 +1,49 @@
+Add integers
+======================
+
+Using ``add_integer``
+
+Importing the function from the module:
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+Checking regular addition:
+     >>> add_integer(4, 4)
+     8
+
+Checking positive with negative:
+     >>> add_integer(4, -2)
+     2
+
+Checking negative whit positive:
+    >>> add_integer(-4, 8)
+    4
+
+Checking float with a int:
+    >>> add_integer(4.33, 8)
+    12
+
+Checking int with a float:
+    >>> add_integer(4, 8.33)
+    12
+
+Checking both float:
+    >>> add_integer(4.33, 8.33)
+    12
+
+Checking not args
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Checking one arg
+    >>> add_integer(2)
+    100
+
+Checking more two args
+   >>> add_integer(1, 2, 3)
+   Traceback (most recent call last):
+   ...
+   TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+
