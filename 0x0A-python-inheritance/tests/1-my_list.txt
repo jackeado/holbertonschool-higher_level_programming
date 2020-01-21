@@ -1,7 +1,7 @@
 The ``1-my_list`` module
 ======================
 
-Using ``MyList``
+Using ``MyList()``
 
 Importing the function from the module:
 	>>> MyList = __import__('1-my_list').MyList
@@ -29,12 +29,12 @@ Checking that MyList inherits from list
     >>> issubclass(MyList, list)
     True
 
-Checking an empty list
+Checking an empty list:
     >>> li = Mylist()
     >>> li.print_sorted()
     []
 
-checking appennd works
+checking appennd works:
     >>> li.append(1)
     >>> li.append(2)
     >>> li.append(3)
@@ -42,16 +42,16 @@ checking appennd works
     print(li)
     [1, 2, 3, 4]
 
-checking append MyList
+checking append MyList:
     >>> li = Mylist
     >>> li.append(1)
     >>> li.append(2)
     >>> li.append(3)
     >>> li.append(4)
-    print_sorted(li)
+    li.print_sorted(li)
     [1, 2, 3, 4]
 
-checking sorted method print_sorted
+checking sorted method print_sorted:
     >>> li = Mylist
     >>> li.append(2)
     >>> li.append(1)
@@ -59,14 +59,14 @@ checking sorted method print_sorted
     >>> li.append(3)
     print(li)
     [2, 1, 4, 3]
-    print_sorted(li)
+    li.print_sorted(li)
     [1, 2, 3, 4]
 
-checking sorted is a negative
+checking sorted is a negative:
     >>> li = Mylist
     >>> li.append(-1)
     >>> li.append(2)
     >>> li.append(-5)
     >>> li.append(3)
-    print_sorted(li)
+    li.print_sorted(li)
     [-5, -1, 2, 3]
