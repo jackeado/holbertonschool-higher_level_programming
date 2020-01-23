@@ -1,75 +1,43 @@
 The ``1-my_list`` module
 ======================
 
-Using ``MyList()``
+Using ``MyList``
+-------------------
 
 Importing the function from the module:
-	>>> MyList = __import__('1-my_list').MyList
+        >>> MyList = __import__("1-my_list").MyList
 
 Checking for module docstring:
-    >>> m = MyList = __import__('1-my_list').__doc__
-    >>> if len(m) > 1
-    True
+         >>> m = __import__("1-my_list").__doc__
+         >>> len(m) > 1
+         True
 
 Checking for class docstring:
-    >>> c = MyList = __import__('1-my_list').MyList.__doc__
-    >>> if len(c) > 1
-    True
+         >>> c = __import__("1-my_list").MyList.__doc__
+         >>> len(c) > 1
+         True
 
 Checking for method docstring:
-    >>> me = MyList = __import__('1-my_list').MyList.__doc__
-    >>> if len(me) > 1
-    True
+	 >>> mod = __import__("1-my_list").MyList.print_sorted.__doc__
+	 >>> len(mod) > 1
+	 True
 
-Checking positive with negative:
-     >>> add_integer(4, -2)
-     2
+Checking that MyList inherits from list:
+	 >>> issubclass(MyList, list)
+	 True
 
-Checking that MyList inherits from list
-    >>> issubclass(MyList, list)
-    True
+Checking for empty list:
+	 >>> l = MyList()
+	 >>> l.print_sorted()
+	 []
 
-Checking an empty list:
-    >>> li = Mylist()
-    >>> li.print_sorted()
-    []
-
-checking appennd works:
-    >>> li.append(1)
-    >>> li.append(2)
-    >>> li.append(3)
-    >>> li.append(4)
-    print(li)
-    [1, 2, 3, 4]
-
-checking append MyList:
-    >>> li = Mylist
-    >>> li.append(1)
-    >>> li.append(2)
-    >>> li.append(3)
-    >>> li.append(4)
-    li.print_sorted(li)
-    [1, 2, 3, 4]
-
-checking sorted method print_sorted:
-    >>> li = Mylist
-    >>> li.append(2)
-    >>> li.append(1)
-    >>> li.append(4)
-    >>> li.append(3)
-    print(li)
-    [2, 1, 4, 3]
-    li.print_sorted(li)
-    [1, 2, 3, 4]
-
-checking sorted is a negative:
-    >>> li = Mylist
-    >>> li.append(-1)
-    >>> li.append(2)
-    >>> li.append(-5)
-    >>> li.append(3)
-    li.print_sorted(li)
-    [-5, -1, 2, 3]
+Checking that appendng works:
+	 >>> l.append(1)
+	 >>> l.append(2)
+	 >>> l.append(3)
+	 >>> l.append(4)
+	 >>> print(l)
+	 [1, 2, 3, 4]
 
 Checking for list already in correct order:
 	 >>> l.print_sorted()
