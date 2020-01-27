@@ -1,28 +1,36 @@
 #!/usr/bin/python3
 """
-
+Contains class Rectangle
 """
 from models.rectangle import Rectangle
 
-class Square(Rectangle):
 
+class Square(Rectangle):
+    """Initialize the base Square"""
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
         self.size = size
 
     @property
     def size(self):
+        """getter of size"""
         return self.width
 
     @size.setter
     def size(self, value):
+        """setter of size"""
         self.width = value
         self.height = value
 
     def __str__(self):
-        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x, self.y, self.width)
+        """ returns  string dictionary"""
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
+                                                         self.x,
+                                                         self.y,
+                                                         self.width)
 
     def update(self, *args, **kwargs):
+        """updates multiple attributes"""
         if len(args):
             for arg, attr in enumerate(args):
                 if arg == 0:
@@ -44,6 +52,7 @@ class Square(Rectangle):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
+        """to dictionary representation"""
         return {"id": self.id,
                 "size": self.size,
                 "x": self.x,
