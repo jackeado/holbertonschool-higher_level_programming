@@ -23,11 +23,12 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
-        """ returns  string dictionary"""
-        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
-                                                         self.x,
-                                                         self.y,
-                                                         self.width)
+        """ returns string dictionary"""
+        return "[{}] ({:d}) {:d}/{:d} - {:d}".format(self.__class__.__name__,
+                                                     self.id,
+                                                     self.x,
+                                                     self.y,
+                                                     self.width)
 
     def update(self, *args, **kwargs):
         """updates multiple attributes"""
