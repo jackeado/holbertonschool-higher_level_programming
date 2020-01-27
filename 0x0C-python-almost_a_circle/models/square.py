@@ -9,7 +9,6 @@ class Square(Rectangle):
     """Initialize the base Square"""
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
-        self.size = size
 
     @property
     def size(self):
@@ -19,8 +18,8 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """setter of size"""
-            self.width = value
-            self.height = value
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """ returns string dictionary"""
