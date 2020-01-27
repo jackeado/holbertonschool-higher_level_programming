@@ -4,6 +4,7 @@ contains rectangle class
 """
 from models.base import Base
 
+
 class Rectangle(Base):
     """Initialize the base Rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -69,11 +70,9 @@ class Rectangle(Base):
             raise ValueError("y must be > 0")
         self.__y = value
 
-
     def area(self):
         """returns the area value of the Rectangle instance"""
         return self.width * self.height
-
 
     def display(self):
         """Display a Rectangle"""
@@ -81,8 +80,6 @@ class Rectangle(Base):
         for i in range(self.__height):
             print(" " * self.__x, end="")
             print('#' * self.width)
-
-
 
     def __str__(self):
         """informal string representation of the rectangle"""
