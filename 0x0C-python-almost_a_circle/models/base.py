@@ -46,12 +46,3 @@ class Base:
             lista_ = json.loads(json_string)
             return lista_
 
-    def create(cls, **dictionary):
-
-        if cls.__name__  == "Rectangle":
-            dummy = cls(3, 5)
-        if cls.__name__ == "Square":
-            dummy = cls(5)
-
-        dummy.update(**dictionary)
-        return dummy
