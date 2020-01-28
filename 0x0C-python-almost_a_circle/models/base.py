@@ -47,11 +47,12 @@ class Base:
             return lista_
 
     def create(cls, **dictionary):
-        """Instance with all attributes already set:"""
+        """Returns an Instance with all attributes already set:"""
         if cls.__name__ is "Rectangle":
             dummy = cls(3, 5)
+            dummy.update(**dictionary)
+            return dummy
         elif cls.__name__ is "Square":
             dummy = cls(5)
-
-        dummy.update(**dictionary)
-        return dummy
+            dummy.update(**dictionary)
+            return dummy
