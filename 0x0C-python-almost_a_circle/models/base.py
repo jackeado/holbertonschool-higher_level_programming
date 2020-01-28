@@ -34,7 +34,7 @@ class Base:
             for inst in list_objs:
                 lista_d.append(inst.to_dictionary())
         with open(filename, encoding='utf-8', mode='w') as f:
-            print(cls.to_json_string(lista_d))
+            return f.write(cls.to_json_string(lista_d))
 
     @classmethod
     def from_json_string(cls, json_string):
