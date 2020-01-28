@@ -47,9 +47,10 @@ class Base:
             return lista_
 
     def create(cls, **dictionary):
-        if cls.__name__  == "Rectangle":
+        """Instance with all attributes already set:"""
+        if cls.__name__ is "Rectangle":
             dummy = cls(3, 5)
-        if cls.__name__ == "Square":
+        elif cls.__name__ is "Square":
             dummy = cls(5)
 
         dummy.update(**dictionary)
