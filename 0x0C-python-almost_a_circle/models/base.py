@@ -10,6 +10,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Initialize class base"""
         if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
@@ -18,14 +19,15 @@ class Base:
 
     @classmethod
     def to_json_string(cls, list_dictionaries):
+        """JSON string representation"""
         if list_dictionaries is None:
             return "[]"
         else:
-            json_s = json.dumps(list_dictionaries)
-            return json_s
+            return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """writes the JSON string representation"""
         filename = "{}.json".format(cls.__name__)
         lista_d = []
         if list_objs is not None:
@@ -36,6 +38,7 @@ class Base:
 
     @classmethod
     def from_json_string(cls, json_string):
+        """list of the JSON string"""
         if json_string is None or json_string == 0:
             lista_ = []
             return lista_
