@@ -27,14 +27,14 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """writes the JSON string representation of list_objs to a file"""
+        """writes the JSON string representation"""
         filename = "{}.json".format(cls.__name__)
-        dic = []
+        lista_d = []
         if list_objs is not None:
-            for i in list_objs:
-                dic.append(cls.to_dictionary())
-        with open(filename, 'w', encoding="utf8") as n_file:
-            n_file.write(cls.to_json_string(dic))
+            for inst in list_objs:
+                lista_d.append(inst.to_dictionary())
+        with open(filename, encoding='utf-8', mode='w') as f:
+            return f.write(cls.to_json_string(lista_d))
 
     @classmethod
     def from_json_string(cls, json_string):
@@ -46,6 +46,7 @@ class Base:
             lista_ = json.loads(json_string)
             return lista_
 
+    @classmethod
     def create(cls, **dictionary):
         """Returns an Instance with all attributes already set:"""
         if cls.__name__ is "Rectangle":
