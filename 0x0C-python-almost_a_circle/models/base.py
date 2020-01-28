@@ -30,7 +30,7 @@ class Base:
         """writes the JSON string representation"""
         filename = "{}.json".format(cls.__name__)
         lista_d = []
-        if list_objs is not None:
+        if list_objs is not None or len(list_dictionaries) == 0:
             for inst in list_objs:
                 lista_d.append(inst.to_dictionary())
         with open(filename, encoding='utf-8', mode='w') as f:
@@ -45,3 +45,13 @@ class Base:
         else:
             lista_ = json.loads(json_string)
             return lista_
+
+    def create(cls, **dictionary):
+
+        if cls.__name__  == "Rectangle":
+            dummy = cls(3, 5)
+        if cls.__name__ == "Square":
+            dummy = cls(5)
+
+        dummy.update(dictionary)
+        return dummy
