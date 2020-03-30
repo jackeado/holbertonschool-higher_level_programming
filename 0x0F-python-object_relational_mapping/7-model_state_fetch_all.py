@@ -3,10 +3,10 @@
  lists all State objects from the database hbtn_0e_6_usa
 """
 
-from sys import argv
-import MySQLdb
-import SQLAlchemy
+import sqlalchemy
 from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from sys import argv
 from model_state import Base, State
 
 if __name__ == "__main__":
