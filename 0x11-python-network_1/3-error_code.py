@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-""" Fetches header from url passed as arg & handles errors a bit"""
-from urllib import request, parse, error
-import sys
-
+"""
+takes in a URL, sends a request to the URL & displays the body of the response
+"""
 if __name__ == "__main__":
+    import urllib.error as error
+    import urllib.request as request
+    from sys import argv
+    req = request.Request(argv[1])
     try:
-        with request.urlopen(sys.argv[1]) as response:
-            print(response.read().decode('utf-8'))
+        with request.urlopen(req) as r:
+            print(r.read().decode('utf-8'))
     except error.HTTPError as e:
-        print("Error code:", e.code)
+        print("Error code: {}".format(e.code))
